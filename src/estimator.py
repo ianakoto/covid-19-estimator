@@ -64,7 +64,7 @@ def estimator(data):
       30_of_total_severe =  (35 /100) * total_with_severe
 
       left_bed_m = 30_of_total_impact -  impact['severeCasesByRequestedTime']
-      left_bed_s = 30_of_total_severe -  impact['severeCasesByRequestedTime']
+      left_bed_s = 30_of_total_severe -  severeImpact['severeCasesByRequestedTime']
 
       impact['hospitalBedsByRequestedTime'] =math.floor( left_bed_m);
       severeImpact['hospitalBedsByRequestedTime'] =math.floor(left_bed_s);
