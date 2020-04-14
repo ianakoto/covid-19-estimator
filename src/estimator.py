@@ -55,8 +55,8 @@ def estimator(data):
 
       
 
-      impact['hospitalBedsByRequestedTime'] =math.trunc( ( data['totalHospitalBeds'] * 0.35  ) -   impact['severeCasesByRequestedTime']);
-      severeImpact['hospitalBedsByRequestedTime'] =math.trunc( (data['totalHospitalBeds'] * 0.35  ) - severeImpact['severeCasesByRequestedTime']);
+      impact['hospitalBedsByRequestedTime'] =math.trunc(0.35 * int( data['totalHospitalBeds']  ) -  ( impact['severeCasesByRequestedTime'] ) );
+      severeImpact['hospitalBedsByRequestedTime'] =math.trunc(0.35 * int(data['totalHospitalBeds'] ) - (severeImpact['severeCasesByRequestedTime'] ));
 
       impact['casesForICUByRequestedTime'] = math.floor((impact['infectionsByRequestedTime'] ) * 5/100);
       severeImpact['casesForICUByRequestedTime '] =math.floor( (severeImpact['infectionsByRequestedTime'] ) *  5/100);
