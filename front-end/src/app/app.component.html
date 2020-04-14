@@ -1,0 +1,110 @@
+
+<div style="margin-top: 8px;">
+  <mat-card>
+
+    <mat-card-header class="card-header info-color white-text text-center py-4" >
+
+      <p> COVID 19 ESTIMATOR FORM </p>
+
+   </mat-card-header>
+
+   <mat-card-content style="margin: 50px;">
+
+
+
+
+    <form [formGroup]="myForm" (ngSubmit)="submit()">
+
+
+      <!-- Population -->
+      <div >
+        <p [ngClass]="{ 'has-error': isSubmitted && formControls.population.errors }">
+        <input type="number" id="population" formControlName="population" placeholder=" data-population" class="form-control" matInput>
+      </p>
+      <div *ngIf="isSubmitted && formControls.population.errors" class="isa_error">
+        <div *ngIf="formControls.population.errors.required">Population is required</div>
+      </div>
+      </div>
+
+
+
+        <!-- timeToElapse -->
+        <div >
+          <p [ngClass]="{ 'has-error': isSubmitted && formControls.timeToElapse.errors }">
+          <input type="number" id="timeToElapse" formControlName="timeToElapse" placeholder=" data-time-to-elapse" class="form-control" matInput>
+        </p>
+        <div *ngIf="isSubmitted && formControls.timeToElapse.errors" class="isa_error">
+          <div *ngIf="formControls.timeToElapse.errors.required">timeToElapse is required</div>
+        </div>
+        </div>
+
+
+
+
+          <!-- reportedCases -->
+      <div >
+        <p [ngClass]="{ 'has-error': isSubmitted && formControls.reportedCases.errors }">
+        <input type="number" id="reportedCases" formControlName="reportedCases" placeholder="data-reported-cases" class="form-control" matInput>
+      </p>
+      <div *ngIf="isSubmitted && formControls.reportedCases.errors" class="isa_error">
+        <div *ngIf="formControls.reportedCases.errors.required">reportedCases is required</div>
+      </div>
+      </div>
+
+
+
+
+
+        <!-- totalhospitalBeds -->
+        <div >
+          <p [ngClass]="{ 'has-error': isSubmitted && formControls.totalHospitalBeds.errors }">
+          <input type="number" id="totalHospitalBeds" formControlName="totalHospitalBeds" placeholder="data-total-hospital-beds" class="form-control" matInput>
+        </p>
+        <div *ngIf="isSubmitted && formControls.totalHospitalBeds.errors" class="isa_error">
+          <div *ngIf="formControls.totalHospitalBeds.errors.required">totalhospitalBeds is required</div>
+        </div>
+        </div>
+
+
+
+
+
+          <!-- periodType -->
+
+      <div class="md-form" id="nclss">
+        <p [ngClass]="{ 'has-error': isSubmitted && formControls.periodType.errors }">
+          <mat-select  [multiple]="false" formControlName="periodType" placeholder="data-period-type" label="class">
+            <mat-option value="days" >Days</mat-option>
+            <mat-option value="weeks">Weeks</mat-option>
+            <mat-option value="months">Months</mat-option>
+
+          </mat-select>
+        </p>
+        <div *ngIf="isSubmitted && formControls.periodType.errors" class="isa_error">
+          <div *ngIf="formControls.periodType.errors.required">periodType is required</div>
+        </div>
+      </div>
+
+
+
+      <button mat-raised-button  style="margin: 10px; background-color:white; color:black"   type="submit"> data-goestimate</button>
+
+
+
+    </form>
+
+
+
+   </mat-card-content>
+
+
+
+  </mat-card>
+
+
+
+
+
+</div>
+
+
