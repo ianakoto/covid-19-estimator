@@ -68,8 +68,8 @@ def estimator(data):
       severeImpact['casesForVentilatorsByRequestedTime'] =math.floor( (severeImpact['infectionsByRequestedTime'] * 2) / 100);
 
       
-      daily_income = data.region['avgDailyIncomeInUSD'];
-      avd_income_population = data.region['avgDailyIncomePopulation'];
+      daily_income = data['region']['avgDailyIncomeInUSD'];
+      avd_income_population = data['region']['avgDailyIncomePopulation'];
       
 
 
