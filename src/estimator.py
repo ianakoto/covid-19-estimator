@@ -76,9 +76,9 @@ def estimator(data):
       impact['dollarsInFlight'] =math.floor( impact['infectionsByRequestedTime'] * daily_income * avd_income_population * new_timeToElapse);  
       severeImpact['severeCasesByRequestedTime'] =math.floor( severeImpact['infectionsByRequestedTime'] * daily_income * avd_income_population * new_timeToElapse);
 
-      output = {'impact':impact,'severeImpact':severeImpact};
+      output = {"impact":impact,"severeImpact":severeImpact};
 
 
-      return {'estimate': output}
+      return  output
       
        
