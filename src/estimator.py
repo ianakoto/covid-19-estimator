@@ -47,8 +47,8 @@ def estimator(data):
       est_infectedPeople_impact =math.floor( impact['currentlyInfected'] * (2 ** factor)); 
       est_infectedPeople_severeImpact = math.floor(severeImpact['currentlyInfected'] * (2 ** factor));
       
-      impact['infectionsByRequestedTime'] = int(est_infectedPeople_impact);
-      severeImpact['infectionsByRequestedTime'] = int(est_infectedPeople_severeImpact);
+      impact['infectionsByRequestedTime'] = est_infectedPeople_impact;
+      severeImpact['infectionsByRequestedTime'] = est_infectedPeople_severeImpact;
       
       impact['severeCasesByRequestedTime'] = math.floor(impact['infectionsByRequestedTime'] * 0.15);      
       severeImpact['severeCasesByRequestedTime'] =math.floor( severeImpact['infectionsByRequestedTime'] *  0.15);
@@ -60,8 +60,8 @@ def estimator(data):
       
 
 
-      impact['hospitalBedsByRequestedTime'] = math.floor( (data['totalHospitalBeds'] * 0.35) -  int(impact['severeCasesByRequestedTime']));
-      severeImpact['hospitalBedsByRequestedTime'] =math.floor( (data['totalHospitalBeds'] * 0.35)  -   int(severeImpact['severeCasesByRequestedTime'])   );
+      impact['hospitalBedsByRequestedTime'] = math.floor( (data['totalHospitalBeds'] * 0.35) -  impact['severeCasesByRequestedTime']);
+      severeImpact['hospitalBedsByRequestedTime'] =math.floor( (data['totalHospitalBeds'] * 0.35)  -   severeImpact['severeCasesByRequestedTime']   );
 
       impact['casesForICUByRequestedTime'] = math.floor((impact['infectionsByRequestedTime'] ) * 5/100);
       severeImpact['casesForICUByRequestedTime '] =math.floor( (severeImpact['infectionsByRequestedTime'] ) *  5/100);
