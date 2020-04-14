@@ -53,9 +53,8 @@ def estimator(data):
       impact['severeCasesByRequestedTime'] =math.floor( (int(impact['infectionsByRequestedTime']) * 15) / 100);      
       severeImpact['severeCasesByRequestedTime'] =math.floor( (int(severeImpact['infectionsByRequestedTime']) * 15) / 100);
 
-      totalHospitalBeds = (int(data['totalHospitalBeds']) * 95) / 100;
-      occupied_beds = (totalHospitalBeds * 65) / 100;
-      unoccupied_beds_covid_patients = totalHospitalBeds - occupied_beds;
+      totalHospitalBeds = int(data['totalHospitalBeds']);
+      unoccupied_beds_covid_patients = (totalHospitalBeds * 35) / 100;
 
       impact['hospitalBedsByRequestedTime'] =math.floor( unoccupied_beds_covid_patients - impact['severeCasesByRequestedTime']);
       severeImpact['hospitalBedsByRequestedTime'] =math.floor( unoccupied_beds_covid_patients - severeImpact['severeCasesByRequestedTime']);
