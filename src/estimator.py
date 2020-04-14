@@ -60,11 +60,11 @@ def estimator(data):
 
       total_bed_left =  (35 /100) * totalHospitalBeds
 
-      left_bed_m = total_bed_left -  impact['severeCasesByRequestedTime']
-      left_bed_s = total_bed_left -  severeImpact['severeCasesByRequestedTime']
+      left_bed_m =math.trun( total_bed_left -  impact['severeCasesByRequestedTime'])
+      left_bed_s =math.trun( total_bed_left -  severeImpact['severeCasesByRequestedTime'])
 
-      impact['hospitalBedsByRequestedTime'] =math.floor( left_bed_m);
-      severeImpact['hospitalBedsByRequestedTime'] =math.floor(left_bed_s);
+      impact['hospitalBedsByRequestedTime'] = left_bed_m;
+      severeImpact['hospitalBedsByRequestedTime'] =left_bed_s;
 
       impact['casesForICUByRequestedTime'] = math.floor((impact['infectionsByRequestedTime'] ) * 5/100);
       severeImpact['casesForICUByRequestedTime '] =math.floor( (severeImpact['infectionsByRequestedTime'] ) *  5/100);
