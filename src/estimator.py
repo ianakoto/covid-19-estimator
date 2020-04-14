@@ -44,8 +44,8 @@ def estimator(data):
       severeImpact['currentlyInfected'] = math.floor(int(data['reportedCases']) * 50);
      
 
-      est_infectedPeople_impact =math.floor( impact['currentlyInfected'] * (2 * factor)); 
-      est_infectedPeople_severeImpact = math.floor(severeImpact['currentlyInfected'] * (2 * factor));
+      est_infectedPeople_impact =math.floor( impact['currentlyInfected'] * (2 ** factor)); 
+      est_infectedPeople_severeImpact = math.floor(severeImpact['currentlyInfected'] * (2 ** factor));
       
       impact['infectionsByRequestedTime'] = est_infectedPeople_impact;
       severeImpact['infectionsByRequestedTime'] = est_infectedPeople_severeImpact;
