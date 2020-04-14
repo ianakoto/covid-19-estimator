@@ -66,12 +66,12 @@ def estimator(data):
       impact['hospitalBedsByRequestedTime'] =math.floor( left_bed_m);
       severeImpact['hospitalBedsByRequestedTime'] =math.floor(left_bed_s);
 
-      impact['casesForICUByRequestedTime'] = math.floor((impact['infectionsByRequestedTime'] * 5) / 100);
-      severeImpact['casesForICUByRequestedTime '] =math.floor( (severeImpact['infectionsByRequestedTime'] * 5) / 100);
+      impact['casesForICUByRequestedTime'] = math.floor((impact['infectionsByRequestedTime'] ) * 5/100);
+      severeImpact['casesForICUByRequestedTime '] =math.floor( (severeImpact['infectionsByRequestedTime'] ) *  5/100);
 
 
-      impact['casesForVentilatorsByRequestedTime'] =math.floor( (impact['infectionsByRequestedTime'] * 2) / 100);
-      severeImpact['casesForVentilatorsByRequestedTime'] =math.floor( (severeImpact['infectionsByRequestedTime'] * 2) / 100);
+      impact['casesForVentilatorsByRequestedTime'] =math.floor( (impact['infectionsByRequestedTime'])* 2/100);
+      severeImpact['casesForVentilatorsByRequestedTime'] =math.floor( (severeImpact['infectionsByRequestedTime']) *  2/100);
 
       
       daily_income = data['region']['avgDailyIncomeInUSD'];
