@@ -25,14 +25,14 @@ def estimator(data):
        """
       
       # normalize timeToElapse to days
-      ptype = data.periodType;
+      ptype = data['periodType'];
       new_timeToElapse = 0;
       if ptype == "months":
-            new_timeToElapse = 30 * int(data.timeToElapse);
+            new_timeToElapse = 30 * int(data['timeToElapse']);
       elif ptype == "weeks":
-            new_timeToElapse = 7 * int(data.timeToElapse);
+            new_timeToElapse = 7 * int(data['timeToElapse']);
       else:
-            new_timeToElapse = int(data.timeToElapse);
+            new_timeToElapse = int(data['timeToElapse']);
       
       factor = new_timeToElapse // 3;
             
@@ -40,8 +40,8 @@ def estimator(data):
       impact = {}
       severeImpact = {}
 
-      impact['currentlyInfected'] = math.floor( int(data.reportedCases) * 10);
-      severeImpact['currentlyInfected'] = math.floor(int(data.reportedCases) * 50);
+      impact['currentlyInfected'] = math.floor( int(data['reportedCases']) * 10);
+      severeImpact['currentlyInfected'] = math.floor(int(data['reportedCases']) * 50);
      
 
       est_infectedPeople_impact =math.floor( impact['currentlyInfected'] * (2 * factor)); 
@@ -53,7 +53,7 @@ def estimator(data):
       impact['severeCasesByRequestedTime'] =math.floor( (int(impact['infectionsByRequestedTime']) * 15) / 100);      
       severeImpact['severeCasesByRequestedTime'] =math.floor( (int(severeImpact['infectionsByRequestedTime']) * 15) / 100);
 
-      totalHospitalBeds = (int(data.totalHospitalBeds) * 95) / 100;
+      totalHospitalBeds = (int(data['totalHospitalBeds']) * 95) / 100;
       occupied_beds = (totalHospitalBeds * 65) / 100;
       unoccupied_beds_covid_patients = totalHospitalBeds - occupied_beds;
 
